@@ -22,4 +22,4 @@ done
 echo -n "function"
 ((count > 1)) &&
     echo -n "s"
-echo " are still be available until next login"
+echo " are still available until next login"
