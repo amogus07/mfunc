@@ -21,5 +21,6 @@ done
 
 echo -n "function"
 ((count > 1)) &&
-    echo -n "s"
-echo " are still available until next login"
+    echo -n "s are" ||
+    echo -n " is"
+echo " still available until next login and can be viewed with the 'where' builtin"
