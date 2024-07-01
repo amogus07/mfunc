@@ -11,7 +11,7 @@ The plugin defines 3 functions:
 |-------------------------|----------------------------------------
 | `mfunc name [name] ...` | create new function(s) interactively
 | `rfunc name [name] ...` | delete existing user-defined function(s)
-| `lfunc [-h|v]`          | list all user-defined functions
+| `lfunc [-h\|v]`          | list all user-defined functions
 
 functions are stored as plain text in $MFUNDCIR and made available via
 the autoload builtin (i.e. they are only loaded into memory when called for the
