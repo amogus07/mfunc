@@ -11,9 +11,9 @@ The plugin defines 3 functions:
 |-------------------------|----------------------------------------
 | `mfunc name [name] ...` | create new function(s) interactively
 | `rfunc name [name] ...` | delete existing user-defined function(s)
-| `lfunc`                 | list all user-defined functions
+| `lfunc [-h|v]`          | list all user-defined functions
 
-functions are stored as plain text in $ZSH/functions/ and made available via
+functions are stored as plain text in $MFUNDCIR and made available via
 the autoload builtin (i.e. they are only loaded into memory when called for the
 first time).
 
@@ -21,7 +21,7 @@ first time).
 
 ###### a) As an oh-my-zsh plugin
 1. Run:
-`cd $ZSH/custom && git clone https://github.com/hlohm/mfunc.git plugins/mfunc`
+`cd $ZSH/custom && git clone https://github.com/amogus07/mfunc.git plugins/mfunc`
 
 2. Add `mfunc` to your plugins in your `.zshrc`. The relevant line should
 look something like this:
@@ -30,7 +30,7 @@ look something like this:
 ###### b) using antigen
 1. Add this line where you load your antigen bundles in your `.zshrc`:
 
-`antigen bundle hlohm/mfunc`
+`antigen bundle amogus07/mfunc`
 ###### c) with vanilla ZSH
 1. `git clone` this repo to a location of your choice
 
@@ -40,10 +40,10 @@ Upon its first run the plugin will notify you that it created the directory in
 which it stores your functions.
 
 #### Configuration
-The directory where functions are stored can be changed by setting the MFUNCDIR environment variable.
+The directory where functions are stored can be changed by setting the $MFUNCDIR environment variable.
 
 By default, `$ZDOTDIR/functions` will be used.
-If ZDOTDIR isn't set, `$HOME/.functions` will be used instead.
+If $ZDOTDIR isn't set, `$HOME/.functions` will be used instead.
 
 #### Disclaimer
 
