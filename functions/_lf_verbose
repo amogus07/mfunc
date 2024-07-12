@@ -4,20 +4,17 @@
     [[ -v ZDOTDIR ]] &&
         MFUNCDIR="${ZDOTDIR}/functions"
 
-local functions=()
-
 # get a list of functions managed by mfunc
-local function_names=($MFUNCDIR/*)
-function_names="${files[@]:t}" # strip the paths
+local functions=($MFUNCDIR/*)
 
-autoload +X "${(z)function_names[@]}"
+# strip the paths
+functions="${functions[@]:t}"
 
-# Iterate over functions and append the body of each function to 'str'
-for function_name in "${(z)function_names[@]}"; do
-    functions+='\n'$(where "$function_name")'\n'
-done
-((${+commands[highlight]}))  &&
-    highlight -S zsh -i <(print -ln "$functions") || {
-    print -l $functions
-    echo "Hint: install 'highlight' to enable syntax highlighting"
+# load functions into current session
+autoload +X "${(z)functions[@]}"
+
+((${+commands[highlight]})) &&
+    highlight -S zsh -i <(where "${(z)functions[@]}") || {
+    where "${(z)functions[@]}"
+    echo "Hint: install 'highlight' to enable syntax highlighting" >&2
 }
