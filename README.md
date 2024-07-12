@@ -2,8 +2,7 @@
 
 A function wrapper plugin for ZSH.
 
-Define, view, edit and delete persistent functions on-the-fly, without extra steps. They are permanently available until you
-delete them.
+Define, view, edit and delete persistent functions on-the-fly, without extra steps. They are permanently available until you delete them.
 
 The plugin defines 3 functions:
 
@@ -41,7 +40,7 @@ which it stores your functions.
 
 ## Configuration
 
-| Environment Variable | Default                                  | Description 
+| Environment Variable | Default                                  | Description
 |----------------------|------------------------------------------|------------------
 | `$MFUNCDIR`          | `${ZDOTDIR/functions:-$HOME/.functions}` | functions storage
 
@@ -54,5 +53,5 @@ which it stores your functions.
 ## Disclaimer
 
 This is an early version covering only the most basic functionality. There are
-no safeguards whatsover, so use at you own risk. Things like tab completion, 
+no safeguards whatsover, so use at you own risk. Things like tab completion,
 input sanitization and the like are on the TODO list.
