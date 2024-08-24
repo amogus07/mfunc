@@ -1,5 +1,6 @@
 # TODO: specific functions, wildcards
-getopts "hv" opt && {
+if getopts "hv" opt
+then
     shift $((OPTIND -1))
     case ${opt} in
     h )
@@ -11,5 +12,6 @@ getopts "hv" opt && {
             return
         ;;
     esac
-}
+fi
+
 command ls "$MFUNCDIR"
